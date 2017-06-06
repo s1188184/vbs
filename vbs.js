@@ -61,3 +61,5 @@ $('#total').text(total.toFixed(2));
 // Register change handler
 $('#tonight').change(getTotal)
 
+$('#tonight').focus();
+
