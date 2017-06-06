@@ -1,74 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>VBS Offering Calculator</title>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>VBS Offering Calculator</title>
+<link rel="stylesheet" href="themes/odometer-theme-digital.css" />
+<style>
+body {
+	background-color: black;
+	color: rgba(139, 245, 165, 0.4);
+	/*color: #8bf5a5;*/
+	font-family: "Wallpoet", monospace;
+	font-size: 2em;
+}
 
+input {
+	color: black;
+}
 
+.container {
+	text-align: center;
+}
 
-    <!-- Latest compiled and minified CSS -->
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+.odometer-container {
+	
+}
 
-    <!-- Optional theme -->
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
+.odometer-container {
+	display: inline-block;
+	font-size: 100px;
+	border: .1em solid rgba(139, 245, 165, 0.4);
+	
+	background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzhiZjVhNSIgc3RvcC1vcGFjaXR5PSIwLjQiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+	background-size: 100%;
+	background-image: -moz-radial-gradient(rgba(139, 245, 165, 0.4), #000000);
+	background-image: -webkit-radial-gradient(rgba(139, 245, 165, 0.4), #000000);
+	background-image: radial-gradient(rgba(139, 245, 165, 0.4), #000000);
+	background-color: #000;
+	font-family: "Wallpoet", monospace;
+	padding: 0 0.2em;
+	line-height: 1.1em;
+	color: #8bf5a5;
+}
 
-    <!--<link rel="stylesheet" href="odometer-theme-default.css" />-->
-    <link rel="stylesheet" href="themes/odometer-theme-digital.css" />
-    <style>
-      body {
-        background-color: black;
-        color: rgba(139, 245, 165, 0.4);
-        font-family: "Wallpoet", monospace;
-        font-size: 2em;
-      }
-      input {
-        color: black;
-      }
-      .odometer-container {
-        display: inline-block;
-        font-size: 100px;
-        border: .1em solid rgba(139, 245, 165, 0.4);
-        color: #8bf5a5;
-        font-family: "Wallpoet", monospace;
-      }
-      .odometer {
-        padding: 0;
-        line-height: 1.5em !important;
-      }
-      #status {
-        color: red;
-      }
-    </style>
- 
-  </head>
-  <body>
-    <div style="text-align:center">
-      <br><br><br><br>
-      <h1>Galactic Starveyor Offering</h1>
+.odometer {
+	padding: 0;
+	line-height: 1.5em !important;
+}
 
-      Goal: $<span id="goal">$4999.99</span><br/>
-      Current Total: $<span id="current"></span><br/> 
-      Tonight's Total:<br/><input type="text" id="tonight"/><br/><br/>
+#status {
+	color: red;
+	
+	background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzhiZjVhNSIgc3RvcC1vcGFjaXR5PSIwLjQiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+	background-size: 100%;
+	background-image: -moz-radial-gradient(rgba(100, 50, 50, 0.4), #000000);
+	background-image: -webkit-radial-gradient(rgba(100, 50, 50, 0.4), #000000);
+	background-image: radial-gradient(rgba(100, 50, 50, 0.4), #000000);
+	background-color: #000;
+	
+}
+</style>
 
-      <div class="odometer-container">
-        $<span id="total" class="odometer"></span>
-      </div>
+</head>
+<body>
+	<div class="container">
 
-      <br/><br/><br/> 
-      <div id="status"></div>
+		<h1>Galactic Starveyor Offering</h1>
 
-    </div>
+		<div>
+			Goal: $<span id="goal"/>
+		</div>
+		<div>
+			Current Total: $<span id="current"/>
+		</div>
+		<div>
+			Tonight's Total:<br />
+			<input type="text" id="tonight" />
+		</div>
+		<div class="odometer-container">
+			$<span id="total" class="odometer"/>
+		</div>
+		<div id="status"/>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
-    <script src="odometer.min.js"></script>
+	</div>
 
-    <script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="odometer.min.js"></script>
+
+	<script>
 
 
       var goal = 4999.99;
@@ -76,10 +98,7 @@
 
       var getTotal = function() {
 
-        // console.log('getting total');
-        // var total = parseFloat(total);
         var newTotal = total + parseFloat($('#tonight').val());
-        // console.log('new total: '+newTotal);
 
         setTimeout(function(){
           $('#total').text(newTotal);
@@ -95,7 +114,6 @@
             status = 'Mission Accomplished';
           }
 
-
           $('#status').text(status);
         }, 3000);
       }
@@ -103,16 +121,12 @@
 
       $('#goal').text(goal);
       $('#current').text(total);
-      $('#total').text($('#current').text());
+      $('#total').text(total);
       $('#tonight').change(getTotal)
-
-
-      // $(function () {
-      // });
 
 
     </script>
 
 
- </body>
+</body>
 </html>
