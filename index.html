@@ -13,18 +13,33 @@
 
 		<h1>Galactic Starveyor Offering</h1>
 
-		<h3>
+		<!--<section>
 			Goal: $<span id="goal"/>
-		</h3>
+		</section>
 
-		<h3>
+		<section>
 			Current: $<span id="current"/>
-		</h3>
+		</section>
 
-		<h3>
-			Tonight:
-			<input type="text" id="tonight" />
-		</h3>
+		<section>
+			Tonight: 
+		</section>-->
+
+    <table class="table">
+      <tr>
+        <td>Goal:</td>
+        <td $<span id="goal"/></td>
+      </tr>
+      <tr>
+        <td>Current:</td>
+        <td> $<span id="current"/></td>
+      </tr>
+      <tr>
+        <td>Tonight:</td>
+        <td><input type="text" id="tonight" /></td>
+      </tr>
+    </table>
+
 
     <div>
       <div class="odometer-container">
@@ -32,9 +47,9 @@
       </div>
     </div>
 
-    <div>
+    <section>
 		  <div id="status"/>
-    </div>
+    </section>
 
 	</div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
