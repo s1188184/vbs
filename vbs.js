@@ -13,6 +13,17 @@ var getUrlParameter = function (name) {
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 };
 
+Number.prototype.formatMoney = function(c, d, t){
+    var n = this, 
+    c = isNaN(c = Math.abs(c)) ? 2 : c, 
+    d = d == undefined ? "." : d, 
+    t = t == undefined ? "," : t, 
+    s = n < 0 ? "-" : "", 
+    i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))), 
+    j = (j = i.length) > 3 ? j % 3 : 0;
+    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+ };
+
 
 var getTotal = function () {
 
@@ -25,7 +36,8 @@ var getTotal = function () {
     setTimeout(function () {
         var status = '';
         if (total < goal) {
-            var difference = (goal - total).toFixed(2);
+            //var difference = (goal - total).toFixed(2);
+            var difference = (goal - total).formatMoney(2);
             status = '$' + difference + ' remaining'
         }
         else {
@@ -54,9 +66,9 @@ total = d1 + d2 + d3 + d4;
 
 
 // Insert values into DOM
-$('#goal').text(goal.toFixed(2));
-$('#current').text(total.toFixed(2));
-$('#total').text(total.toFixed(2));
+$('#goal').text(goal.formatMoney(2));
+$('#current').text(total.formatMoney(2));
+$('#total').text(total.formatMoney(2));
 
 // Register change handler
 $('#tonight').change(getTotal)
