@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title></title>
+
+
+
+    <!-- Latest compiled and minified CSS -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+
+    <!-- Optional theme -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
+
+    <!--<link rel="stylesheet" href="odometer-theme-default.css" />-->
+    <link rel="stylesheet" href="themes/odometer-theme-digital.css" />
+    <style>
+      body {
+        background-color: black;
+        color: rgba(139, 245, 165, 0.4);
+        font-family: "Wallpoet", monospace;
+        font-size: 2em;
+      }
+      input {
+        color: black;
+      }
+      .odometer-container {
+        display: inline-block;
+        font-size: 100px;
+        border: .1em solid rgba(139, 245, 165, 0.4);
+        color: #8bf5a5;
+        font-family: "Wallpoet", monospace;
+      }
+      .odometer {
+        padding: 0;
+        line-height: 1.5em !important;
+      }
+      #status {
+        color: red;
+      }
+    </style>
+ 
+  </head>
+  <body>
+    <div style="text-align:center">
+      <br><br><br><br>
+      <h1>Galactic Starveyor Offering</h1>
+
+      Goal: $<span id="goal">$4999.99</span><br/>
+      Current Total: $<span id="current"></span><br/> 
+      Tonight's Total:<br/><input type="text" id="tonight"/><br/><br/>
+
+      <div class="odometer-container">
+        $<span id="total" class="odometer"></span>
+      </div>
+
+      <br/><br/><br/> 
+      <div id="status"></div>
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+    <script src="odometer.min.js"></script>
+
+    <script>
+
+
+      var goal = 4999.99;
+      var total = 76.98;
+
+      var getTotal = function() {
+
+        // console.log('getting total');
+        // var total = parseFloat(total);
+        var newTotal = total + parseFloat($('#tonight').val());
+        // console.log('new total: '+newTotal);
+
+        setTimeout(function(){
+          $('#total').text(newTotal);
+        }, 100);
+
+        setTimeout(function() {
+          var status = '';
+
+          if (newTotal < 5000) {
+            status = '$' + (5000 - newTotal) + ' remaining.'
+          }
+          else {
+            status = 'Mission Accomplished';
+          }
+
+
+          $('#status').text(status);
+        }, 3000);
+      }
+
+
+      $('#goal').text(goal);
+      $('#current').text(total);
+      $('#total').text($('#current').text());
+      $('#tonight').change(getTotal)
+
+
+      // $(function () {
+      // });
+
+
+    </script>
+
+
+ </body>
+</html>
