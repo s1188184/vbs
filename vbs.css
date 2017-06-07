@@ -4,7 +4,7 @@ body {
 	color: #8bf5a5;
 	/*font-family: "Wallpoet", monospace;*/
 	font-family: 'Orbitron', sans-serif;
-	font-size: 2em;
+	/*font-size: 1em;*/
 }
 h1 {
 	margin-top: 20px;
@@ -13,7 +13,7 @@ h1 {
 	font-family: "Wallpoet", monospace;
 }
 
-input, 
+/*input, 
 input:focus {
     width: 300px;
 	background-color: black;
@@ -25,7 +25,7 @@ input:focus {
 	font-size: 1em;
 	font-family: "Wallpoet", monospace;
 	caret-color: #8bf5a5;
-}
+}*/
 
 /*section {
     margin: 20px;
@@ -41,7 +41,7 @@ input:focus {
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
-	font-size: 40px;
+	font-size: 35px;
     text-align: right;
 }
 .table td:last-child {
@@ -59,7 +59,7 @@ input:focus {
 
 .odometer-container {
 	display: inline-block;
-	font-size: 100px;
+	font-size: 80px;
 	border: .1em solid rgba(139, 245, 165, 0.4);
 	
 	background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzhiZjVhNSIgc3RvcC1vcGFjaXR5PSIwLjQiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
@@ -84,7 +84,7 @@ input:focus {
 #status {
   display: inline-block;
 	color: red;
-  	font-size: 75px;
+  	font-size: 55px;
 
     margin: 20px;
 	height: 80px;
