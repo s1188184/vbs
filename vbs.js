@@ -100,15 +100,15 @@ d3 = d3 ? parseFloat(d3) : 0;
 d4 = d4 ? parseFloat(d4) : 0;
 today = today ? parseFloat(today) : 0;
 
+
+// Do initial calculations
 total = current = d1 + d2 + d3 + d4;
 need = goal - current;
 
-
+// Do initial display
 reset();
 
 // Register change handler
-//$('#tonight').change(getTotal)
-$('body').click(toggle)
-
-//$('#tonight').focus();
+$('body').click(toggle);
+$('body').keyup(toggle);
 
