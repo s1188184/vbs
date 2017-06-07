@@ -11,32 +11,28 @@
 <body>
 	<div class="container">
 
-		<h1>Galactic Starveyor Offering</h1>
-
-		<!--<section>
-			Goal: $<span id="goal"/>
-		</section>
-
-		<section>
-			Current: $<span id="current"/>
-		</section>
-
-		<section>
-			Tonight: 
-		</section>-->
+		<h1 class="title">Galactic Starveyors Offering</h1>
 
     <table class="table">
       <tr>
         <td>Goal:</td>
-        <td $<span id="goal"/></td>
+        <td><span id="goal"/></td>
       </tr>
       <tr>
         <td>Current:</td>
-        <td> $<span id="current"/></td>
+        <td><span id="current"/></td>
+      </tr>
+      <tr>
+        <td>Still Need:</td>
+        <td><span id="need"/></td>
       </tr>
       <tr>
         <td>Tonight:</td>
-        <td><input type="text" id="tonight" /></td>
+        <td id="today-cell">
+          <span id="today-container">
+            $<span id="today" class="odometer"/>
+          </span>
+        </td>
       </tr>
     </table>
 
@@ -47,9 +43,7 @@
       </div>
     </div>
 
-    <section>
-		  <div id="status"/>
-    </section>
+	  <div id="status"/>
 
 	</div>
   <script src="jquery.min.js"></script>
