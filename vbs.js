@@ -43,31 +43,45 @@ var reset = function() {
     $('#today-container').hide();
     $('#today').text('');
 
-    $('#total').text(total.formatMoney(2));
+    $('#total1').text(total.formatMoney(2));
+    $('#total2').text(total.formatMoney(2));
     $('#status').text('');
+
+    $('#question').show();
+    $('#success').hide();
 };
 
 
 var getTotal = function() {
 
     // Update total
-    // var tonightTotal = parseFloat($('#tonight').val());
     total = current + today;
     $('#today-container').show();
     $('#today').text(today.formatMoney(2));
-    $('#total').text(total);
+    $('#total1').text(total);
+    $('#total2').text(total);
 
     // Update status
     setTimeout(function () {
-        var status = '';
         if (total < goal) {
+            var status = '';
             var difference = goal - total;
             status = '$' + difference.formatMoney(2) + ' remaining'
+            $('#status').text(status);
+            var rate = 200;
+            var blinks = 2;
+            for (var i=0; i<blinks; i++) {
+                $('#status').fadeOut(rate).fadeIn(rate);
+            }
         }
         else {
-            status = 'MISSION ACCOMPLISHED';
+            $('#question').hide();
+            var rate = 200;
+            var blinks = 3;
+            for (var i=0; i<blinks; i++) {
+                $('#success').fadeOut(rate).fadeIn(rate);
+            }
         }
-        $('#status').text(status);
     }, 3000);
 
 };

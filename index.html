@@ -10,42 +10,52 @@
 </head>
 <body>
 	<div class="container">
+    <div id="question">
 
-		<h1 class="title">2017 VBS Offering</h1>
+      <h1 class="title">2017 VBS Offering</h1>
 
-    <table class="table">
-      <tr>
-        <td>Goal:</td>
-        <td><span id="goal"/></td>
-      </tr>
-      <tr>
-        <td>Current:</td>
-        <td><span id="current"/></td>
-      </tr>
-      <tr>
-        <td>Still Need:</td>
-        <td><span id="need"/></td>
-      </tr>
-      <tr>
-        <td>Tonight:</td>
-        <td id="today-cell">
-          <span id="today-container">
-            $<span id="today" class="odometer"/>
-          </span>
-        </td>
-      </tr>
-    </table>
+      <table class="table">
+        <tr>
+          <td>Goal:</td>
+          <td><span id="goal"/></td>
+        </tr>
+        <tr>
+          <td>Current:</td>
+          <td><span id="current"/></td>
+        </tr>
+        <tr>
+          <td>Still Need:</td>
+          <td><span id="need"/></td>
+        </tr>
+        <tr>
+          <td>Tonight:</td>
+          <td id="today-cell">
+            <span id="today-container">
+              $<span id="today" class="odometer"/>
+            </span>
+          </td>
+        </tr>
+      </table>
 
 
-    <div>
-      <div class="odometer-container">
-        $<span id="total" class="odometer"/>
+      <div>
+        <div class="odometer-container">
+          $<span id="total1" class="odometer"/>
+        </div>
       </div>
+
+      <div id="status"/>
+
     </div>
+  </div>
 
-	  <div id="status"/>
+  <div id="success">
+    <div class="odometer-container">
+      $<span id="total2" class="odometer"/>
+    </div>
+    <div id="success-message">Mission Accomplished!!!</div>
+  </div>
 
-	</div>
   <script src="jquery.min.js"></script>
 	<script src="odometer.min.js"></script>
 	<script src="vbs.js"></script>

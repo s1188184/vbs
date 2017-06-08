@@ -1,36 +1,15 @@
 body {
 	background-color: black;
-	/*color: rgba(139, 245, 165, 0.4);*/
 	color: #8bf5a5;
-	/*font-family: "Wallpoet", monospace;*/
 	font-family: 'Orbitron', sans-serif;
-	/*font-size: 1em;*/
 }
+
 h1 {
 	margin-top: 20px;
 	margin-bottom: 20px;
 	font-size: 90px;
 	font-family: "Wallpoet", monospace;
 }
-
-/*input, 
-input:focus {
-    width: 300px;
-	background-color: black;
-	color: #8bf5a5;
-	border: none;
-	box-shadow: none;
-	outline: none;
-	text-align: right;
-	font-size: 1em;
-	font-family: "Wallpoet", monospace;
-	caret-color: #8bf5a5;
-}*/
-
-/*section {
-    margin: 20px;
-}*/
-
 
 .container {
     text-align: center;
@@ -45,8 +24,8 @@ input:focus {
     text-align: right;
 	font-weight: 900;
 }
+
 .table td:last-child {
-    /*padding-left: 50px;*/
 	width: 350px;
 }
 
@@ -69,36 +48,27 @@ input:focus {
 	background-image: -webkit-radial-gradient(rgba(139, 245, 165, 0.4), #000000);
 	background-image: radial-gradient(rgba(139, 245, 165, 0.4), #000000);
 	background-color: #000;
-	/*font-family: "Wallpoet", monospace;*/
 	font-family: "Orbitron", monospace;
 	padding: 0 0.2em;
 	line-height: 1.1em;
 	color: #8bf5a5;
-  /*text-align: center;*/
 }
-
-/*.odometer {
-	padding: 0;
-	line-height: 1.5em !important;
-}*/
 
 #status {
   display: inline-block;
 	color: #ff3838;
   	font-size: 75px;
-
     margin: 20px;
 	height: 80px;
 	min-height: 80px;
 	padding: 0px;
-	/*border: 1px solid white;*/
+}
 
-	
-	/*background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzhiZjVhNSIgc3RvcC1vcGFjaXR5PSIwLjQiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
-	background-size: 100%;
-	background-image: -moz-radial-gradient(rgba(100, 50, 50, 0.4), #000000);
-	background-image: -webkit-radial-gradient(rgba(100, 50, 50, 0.4), #000000);
-	background-image: radial-gradient(rgba(100, 50, 50, 0.4), #000000);
-	background-color: #000;*/
-	
+#success {
+	margin-top: 100px;
+}
+
+#success-message {
+	padding: 100px;
+	font-size: 100px;
 }
